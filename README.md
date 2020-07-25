@@ -1,2 +1,2 @@
 # Memory-Game
-Test you memory skills.
+Test your memory skills.
