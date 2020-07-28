@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.static(path.resolve(__dirname + '/../client/public')));
 
 app.get('/users', (req, res) => {
-  console.log(req);
   Users.find({})
     .then((data) => {
       res.send(data);
@@ -32,14 +31,23 @@ app.post('/users', (req, res) => {
     .catch(error => console.log(error));
 });
 
-app.put('/users/', (req, res) => {
-  console.log(req.body[0].userName);
-  var name = req.body[0].userName;
-  var time = req.body[0].topTime;
-  Users.updateOne({ userName: name }, { topTime: time}, (err, result) => {
+app.put('/users/:id', (req, res) => {
+  var id = req.params.id;
+  var time = req.body.topTime;
+  Users.updateOne({ id: id }, { topTime: time}, (err, result) => {
     if (err) { console.log('Error updating reviews', err); }
     res.status(200).json(result);
   });
+});
+
+app.delete('/users', (req, res) => {
+  console.log(req.body.userName);
+  var name = req.body.userName;
+  Users.deleteOne({userName: name})
+    .then(() => {
+      res.status(200).send('User deleted');
+    })
+    .catch(err => console.log(err));
 });
 
 

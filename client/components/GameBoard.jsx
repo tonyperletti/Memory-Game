@@ -78,7 +78,8 @@ class GameBoard extends React.Component {
       ],
       cardMatch: '',
       topTime: '6:45pm',
-      currentUser: 'Tony'
+      currentUser: 'Tony',
+      id: 1
     };
     this.shuffle = this.shuffle.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -86,10 +87,10 @@ class GameBoard extends React.Component {
   }
 
   stopGame() {
+    alert('Great Job!');
     var time = this.state.topTime;
     console.log(time);
-    axios.put('/users/', {
-      userName: this.state.currentUser,
+    axios.put(`/users/${this.props.id}`, {
       topTime: time
     })
       .then(res => {
@@ -98,7 +99,6 @@ class GameBoard extends React.Component {
       .catch(err => {
         console.log(err);
       });
-
   }
 
   handleClick(cardIndex) {
@@ -111,23 +111,17 @@ class GameBoard extends React.Component {
       // console.log('here');
       for (var i = 0; i < updated2.length; i++) {
         if (view === updated2[i]) {
-          console.log('match');
+          // console.log('match');
           updated2[i] = '';
         }
       }
-      console.log('removed');
-      // if (updated2 === ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']) {
-      //   console.log('Winner!');
-      // }
+      // console.log('removed');
       return updated2;
-      // this.setState({
-      //   cards: updated2
-      // });
     };
     var currentCard = this.state.view[cardIndex];
     if (currentCard === this.state.cardMatch && this.state.counter === 2) {
       var updated3 = removeCards(currentCard);
-      // console.log(JSON.stringify(updated3));
+
       if (JSON.stringify(updated3) === JSON.stringify(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])) {
         console.log('WINNER!');
         this.stopGame();
@@ -161,6 +155,7 @@ class GameBoard extends React.Component {
         counter: 0
       });
     } else {
+
       // updated cards for first 2 guesses
       var updated = this.state.cards;
       var faces = this.state.view;

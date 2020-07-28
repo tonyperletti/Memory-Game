@@ -12,21 +12,30 @@ class App extends React.Component {
       users: [],
       name: '',
       image: '',
-      topTime: '',
+      topTime: '0:00',
       currentUser: '',
-      currentPic: ''
+      currentPic: '',
+      id: 1
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.initiateTimestop = this.initiateTimeStop.bind(this);
+    this.increaseId = this.increaseId.bind(this);
   }
 
   initiateTimeStop() {
 
   }
 
+  increaseId() {
+    var count = this.state.id;
+    this.setState({
+      id: count++
+    });
+    console.log(this.state.id);
+  }
+
   handleChange(event) {
-    // console.log(event.target.value);
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -34,19 +43,19 @@ class App extends React.Component {
     this.setState({
       [name]: value
     });
-    // console.log(this.state.name);
   }
 
   handleSubmit(event) {
-    console.log(this.props.time);
-    // console.log(this.state.name);
+    // increaseId();
     axios.post('/users/', {
+      id: this.state.id,
       userName: this.state.name,
-      imageUrl: this.state.image
-      // implement topTime in another axios.post function
+      imageUrl: this.state.image,
+      topTime: this.state.topTime
     })
       .then(() => {
-        console.log('post submitted');
+        console.log('Submitted');
+        increaseId();
       })
       .catch(error => console.log(error));
   }
@@ -84,7 +93,7 @@ class App extends React.Component {
           <p>{this.state.currentUser}</p><br></br>
           <img src={this.state.currentPic}></img>
         </div>
-        <GameBoard /><br></br>
+        <GameBoard id={this.state.id}/><br></br>
         <Timer stop={this.initiateTimeStop()}/>
         <Users users={this.state.users}/>
 

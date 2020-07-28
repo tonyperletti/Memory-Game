@@ -19,14 +19,25 @@ const Picture = styled.img`
 export default class Users extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   users: []
+    this.state = {
+      users: []
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    var name = event.target.className;
+    console.log(name);
+    axios.delete('/users', { data: {userName: name }})
+      .then(() => {
+        console.log('User deleted');
+      })
+      .catch(err => console.log(err));
   }
 
   componentDidMount() {
 
   }
-
 
   render() {
     return (
@@ -36,7 +47,7 @@ export default class Users extends Component {
           <Fragment key={i}>
             <Individual>{user.userName}</Individual>
             <Picture src={user.imageUrl}></Picture>
-            <button>Delete User</button>
+            <button className={user.userName} onClick={this.handleClick}>Delete User</button>
           </Fragment>
         )}
         </Container>
