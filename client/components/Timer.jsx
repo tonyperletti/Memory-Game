@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
+
 export default class Timer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      time: 0,
       minutes: 0,
       seconds: 0
     };
+    this.getTime = this.getTime.bind(this);
+    this.stopTime = this.stopTime.bind(this);
+  }
+
+  stopTime() {
+    var currentTime = `${this.state.minutes}:${this.state.seconds}`;
+    this.setState({
+      time: currentTime
+    });
+    this.getTime();
+  }
+
+  getTime() {
+
+    alert(`Your Time Was: ${this.state.time}`);
+    return this.state.time;
   }
 
   componentDidMount() {
@@ -32,7 +50,7 @@ export default class Timer extends Component {
 
     return (
       <div>
-        <h3>{ minutes }:{ seconds < 10 ? `0${ seconds}` : seconds }</h3>
+        <h3 time={this.state.time} >{ minutes }:{ seconds < 10 ? `0${ seconds}` : seconds }</h3>
       </div>
     );
   }

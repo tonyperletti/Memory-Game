@@ -32,4 +32,16 @@ app.post('/users', (req, res) => {
     .catch(error => console.log(error));
 });
 
+app.put('/users/', (req, res) => {
+  console.log(req.body[0].userName);
+  var name = req.body[0].userName;
+  var time = req.body[0].topTime;
+  Users.updateOne({ userName: name }, { topTime: time}, (err, result) => {
+    if (err) { console.log('Error updating reviews', err); }
+    res.status(200).json(result);
+  });
+});
+
+
+
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));

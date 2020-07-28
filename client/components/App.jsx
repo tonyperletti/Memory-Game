@@ -6,9 +6,10 @@ import Users from './Users.jsx';
 import styled from 'styled-components';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      users: [],
       name: '',
       image: '',
       topTime: '',
@@ -17,6 +18,11 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.initiateTimestop = this.initiateTimeStop.bind(this);
+  }
+
+  initiateTimeStop() {
+
   }
 
   handleChange(event) {
@@ -32,6 +38,7 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
+    console.log(this.props.time);
     // console.log(this.state.name);
     axios.post('/users/', {
       userName: this.state.name,
@@ -47,8 +54,10 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/users/')
       .then((data) => {
-        // console.log(data.data[0].imageUrl);
+        var users = data.data;
+        // console.log(data.data);
         this.setState({
+          users: users,
           currentUser: data.data[0].userName,
           currentPic: data.data[0].imageUrl
         });
@@ -76,8 +85,8 @@ class App extends React.Component {
           <img src={this.state.currentPic}></img>
         </div>
         <GameBoard /><br></br>
-        <Timer />
-        <Users />
+        <Timer stop={this.initiateTimeStop()}/>
+        <Users users={this.state.users}/>
 
       </div>
     );
