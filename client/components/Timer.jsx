@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Timer extends Component {
   constructor(props) {
@@ -6,7 +6,7 @@ export default class Timer extends Component {
     this.state = {
       time: 0,
       minutes: 0,
-      seconds: 0
+      seconds: 0,
     };
     this.getTime = this.getTime.bind(this);
     this.stopTime = this.stopTime.bind(this);
@@ -15,13 +15,14 @@ export default class Timer extends Component {
   stopTime() {
     var currentTime = `${this.state.minutes}:${this.state.seconds}`;
     this.setState({
-      time: currentTime
+      time: currentTime,
     });
     this.getTime();
   }
 
   getTime() {
-
+    // const time = ;
+    // time
     alert(`Your Time Was: ${this.state.time}`);
     return this.state.time;
   }
@@ -31,26 +32,30 @@ export default class Timer extends Component {
       const { seconds, minutes } = this.state;
       if (seconds < 60) {
         this.setState(({ seconds }) => ({
-          seconds: seconds + 1
+          seconds: seconds + 1,
         }));
       }
       if (seconds === 59) {
         clearInterval(this.myInterval);
         this.setState(({ minutes }) => ({
           minutes: minutes + 1,
-          seconds: 0
+          seconds: 0,
         }));
-        myInterval();
+        // myInterval();
       }
     }, 1000);
+    // myInterval();
   }
 
-  render () {
+  render() {
     const { minutes, seconds } = this.state;
 
     return (
       <div>
-        <h3 time={this.state.time} >{ minutes }:{ seconds < 10 ? `0${ seconds}` : seconds }</h3>
+        <h1>Best Times</h1>
+        <h3 time={this.state.time}>
+          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+        </h3>
       </div>
     );
   }
