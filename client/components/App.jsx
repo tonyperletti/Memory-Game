@@ -24,7 +24,7 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.initiateTimestop = this.initiateTimeStop.bind(this);
+    this.initiateTimeStop = this.initiateTimeStop.bind(this);
     this.increaseId = this.increaseId.bind(this);
   }
 
@@ -114,7 +114,7 @@ class App extends React.Component {
           <br></br>
           <Board id={this.state.id} />
           <br></br>
-          <Timer stop={this.initiateTimeStop()} />
+          {/* <Timer stop={this.initiateTimeStop()} /> */}
           <Users users={this.state.users} />
         </EntireView>
       </div>

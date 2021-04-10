@@ -4,6 +4,7 @@
 
 import React from "react";
 import App from "./App.jsx";
+import css from "./styles.css";
 
 class Board extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class Board extends React.Component {
       this.classList.toggle("flip");
 
       if (!hasFlippedCard) {
+        /////////////////////////////////////////////
+        console.log("here");
         //first click
         hasFlippedCard = true;
         firstCard = this;
@@ -74,9 +77,165 @@ class Board extends React.Component {
     })();
 
     cards.forEach((card) => card.addEventListener("click", flipCard));
+
     return (
-      <div>
-        <p>Hello</p>
+      <div className="memory-game">
+        <div className="memory-card" data-framework="eclipse">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card1.png"
+            alt="eclipse"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="eclipse">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card1.png"
+            alt="eclipse"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="french-bulldog">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card2.png"
+            alt="French Bulldog"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="french-bulldog">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card2.png"
+            alt="French Bulldog"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="switzerland">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card5.png"
+            alt="Switzerland"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="switzerland">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card5.png"
+            alt="Switzerland"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="beach">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card6.png"
+            alt="Beach"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="beach">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card6.png"
+            alt="Beach"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="cabin">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card7.png"
+            alt="Cabin"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="cabin">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card7.png"
+            alt="Cabin"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="galaxy">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
+            alt="Galaxy"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="galaxy">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
+            alt="Galaxy"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
       </div>
     );
   }
