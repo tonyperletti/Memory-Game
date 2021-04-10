@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
+  background-color: green;
 }
 
 .memory-card {
@@ -40,9 +41,9 @@ body {
 .back-face {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  /* padding: 10px; */
   border-radius: 5px;
-  background: #1c7ccc;
+  /* background: #1c7ccc; */
   position: absolute;
   backface-visibility: hidden;
 }

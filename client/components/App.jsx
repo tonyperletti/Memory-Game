@@ -5,9 +5,11 @@ import Board from "./Board.jsx";
 import Timer from "./Timer.jsx";
 import Users from "./Users.jsx";
 import styled from "styled-components";
+import CreatePlayer from "./CreatePlayer.jsx";
 
 const EntireView = styled.div`
   padding-left: 25px;
+  background-color: green;
 `;
 
 class App extends React.Component {
@@ -83,29 +85,10 @@ class App extends React.Component {
     return (
       <div>
         <EntireView>
-          <div className="user-form">
-            <h3>Enter Your Information</h3>
-            <form>
-              <label>Name</label>
-              <input
-                className="name-input"
-                type="text"
-                name="name"
-                onChange={this.handleChange}
-              ></input>
-              <label>Profile Picture</label>
-              <input
-                className="image-input"
-                type="text"
-                name="image"
-                onChange={this.handleChange}
-              ></input>
-              <button className="submit-button" onClick={this.handleSubmit}>
-                Submit
-              </button>
-            </form>
-          </div>
           <div className="current-user">
+            <div>
+              <CreatePlayer />
+            </div>
             <h3>Current Player</h3>
             <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
             <br></br>
