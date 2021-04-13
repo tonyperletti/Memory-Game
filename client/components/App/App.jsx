@@ -6,15 +6,6 @@ import Timer from "../Timer.jsx";
 import Users from "../Users.jsx";
 import css from "./app.css";
 
-import styled from "styled-components";
-
-const EntireView = styled.div`
-  margin: auto;
-  height: 100vh;
-  padding-left: 25px;
-  background-color: green;
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -86,15 +77,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <EntireView>
-          <div className="players-panel">
+      <div className="main-view">
+        <div className="players-panel">
+          <div className="player-container">
             <div className="player">
               <h3>Player 1</h3>
               <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
               <br></br>
               <img src={this.state.currentPic}></img>
             </div>
+          </div>
+          <div className="player-container">
             <div className="player">
               <h3>Player 2</h3>
               <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
@@ -102,10 +95,10 @@ class App extends React.Component {
               <img src={this.state.currentPic}></img>
             </div>
           </div>
-          <Board id={this.state.id} />
-          {/* <Timer stop={this.initiateTimeStop()} /> */}
-          {/* <Users users={this.state.users} /> */}
-        </EntireView>
+        </div>
+        <Board id={this.state.id} />
+        {/* <Timer stop={this.initiateTimeStop()} /> */}
+        {/* <Users users={this.state.users} /> */}
       </div>
     );
   }

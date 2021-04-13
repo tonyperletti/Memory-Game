@@ -5,8 +5,15 @@
 }
 
 body {
+  margin: auto;
   height: 100vh;
-  display: grid;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: green;
+}
+
+.main-view {
+  margin: auto;
 }
 
 .players-panel {
@@ -14,5 +21,11 @@ body {
   justify-content: space-between;
 }
 
+.player-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .player {
+  margin: auto;
 }
