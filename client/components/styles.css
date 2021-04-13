@@ -41,9 +41,7 @@ body {
 .back-face {
   width: 100%;
   height: 100%;
-  /* padding: 10px; */
   border-radius: 5px;
-  /* background: #1c7ccc; */
   position: absolute;
   backface-visibility: hidden;
 }

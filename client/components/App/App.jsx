@@ -1,17 +1,18 @@
 /* eslint-disable quotes */
 import axios from "axios";
 import React from "react";
-import Board from "./Board.jsx";
-import Timer from "./Timer.jsx";
-import Users from "./Users.jsx";
+import Board from "../Board.jsx";
+import Timer from "../Timer.jsx";
+import Users from "../Users.jsx";
+import css from "./app.css";
+
 import styled from "styled-components";
 
 const EntireView = styled.div`
+  margin: auto;
   height: 100vh;
   padding-left: 25px;
   background-color: green;
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 class App extends React.Component {
@@ -87,15 +88,23 @@ class App extends React.Component {
     return (
       <div>
         <EntireView>
-          <div className="current-user">
-            <h3>Current Player</h3>
-            <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-            <br></br>
-            <img src={this.state.currentPic}></img>
+          <div className="players-panel">
+            <div className="player">
+              <h3>Player 1</h3>
+              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
+              <br></br>
+              <img src={this.state.currentPic}></img>
+            </div>
+            <div className="player">
+              <h3>Player 2</h3>
+              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
+              <br></br>
+              <img src={this.state.currentPic}></img>
+            </div>
           </div>
           <Board id={this.state.id} />
           {/* <Timer stop={this.initiateTimeStop()} /> */}
-          <Users users={this.state.users} />
+          {/* <Users users={this.state.users} /> */}
         </EntireView>
       </div>
     );

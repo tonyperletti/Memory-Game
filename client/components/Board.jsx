@@ -3,7 +3,7 @@
 /* eslint-disable quotes */
 
 import React from "react";
-import App from "./App.jsx";
+import App from "./App/App.jsx";
 import css from "./styles.css";
 
 class Board extends React.Component {
