@@ -4,12 +4,14 @@ import React from "react";
 import Board from "./Board.jsx";
 import Timer from "./Timer.jsx";
 import Users from "./Users.jsx";
-import CreatePlayer from "./CreatePlayer.jsx";
 import styled from "styled-components";
 
 const EntireView = styled.div`
+  height: 100vh;
   padding-left: 25px;
   background-color: green;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 class App extends React.Component {
@@ -86,17 +88,12 @@ class App extends React.Component {
       <div>
         <EntireView>
           <div className="current-user">
-            <div>
-              <CreatePlayer />
-            </div>
             <h3>Current Player</h3>
             <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
             <br></br>
             <img src={this.state.currentPic}></img>
           </div>
-          <br></br>
           <Board id={this.state.id} />
-          <br></br>
           {/* <Timer stop={this.initiateTimeStop()} /> */}
           <Users users={this.state.users} />
         </EntireView>
