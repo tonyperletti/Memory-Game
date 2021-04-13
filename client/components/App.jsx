@@ -4,8 +4,8 @@ import React from "react";
 import Board from "./Board.jsx";
 import Timer from "./Timer.jsx";
 import Users from "./Users.jsx";
-import styled from "styled-components";
 import CreatePlayer from "./CreatePlayer.jsx";
+import styled from "styled-components";
 
 const EntireView = styled.div`
   padding-left: 25px;
