@@ -1,10 +1,12 @@
 /* eslint-disable quotes */
 import axios from "axios";
 import React from "react";
+import CreatePlayer from "../CreatePlayer.jsx";
 import Board from "../Board.jsx";
 import Timer from "../Timer.jsx";
 import Users from "../Users.jsx";
 import css from "./app.css";
+import ChatBox from "../ChatBox"; ///// shorter syntax for import with index.js file
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class App extends React.Component {
       name: "",
       image: "",
       topTime: "0:00",
-      currentUser: "",
+      currentUser: "", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -76,31 +78,40 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="main-view">
-        <div className="players-panel">
-          <div className="player-container">
-            <div className="player">
-              <h3>Player 1</h3>
-              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-              <br></br>
-              <img src={this.state.currentPic}></img>
-            </div>
-          </div>
-          <div className="player-container">
-            <div className="player">
-              <h3>Player 2</h3>
-              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-              <br></br>
-              <img src={this.state.currentPic}></img>
-            </div>
-          </div>
+    if (!this.state.currentUser) {
+      return (
+        <div>
+          <CreatePlayer />
         </div>
-        <Board id={this.state.id} />
-        {/* <Timer stop={this.initiateTimeStop()} /> */}
-        {/* <Users users={this.state.users} /> */}
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="main-view">
+          <div className="players-panel">
+            <div className="player-container">
+              <div className="player">
+                <h3>Player 1</h3>
+                <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
+                <ChatBox />
+                <br></br>
+                <img src={this.state.currentPic}></img>
+              </div>
+            </div>
+            <div className="player-container">
+              <div className="player">
+                <h3>Player 2</h3>
+                <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
+                <br></br>
+                <img src={this.state.currentPic}></img>
+              </div>
+            </div>
+          </div>
+          <Board id={this.state.id} />
+          {/* <Timer stop={this.initiateTimeStop()} /> */}
+          <Users users={this.state.users} />
+        </div>
+      );
+    }
   }
 }
 

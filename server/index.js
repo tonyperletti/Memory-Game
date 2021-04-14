@@ -4,9 +4,12 @@ const morgan = require("morgan");
 const path = require("path");
 const db = require("../database/index.js");
 const Users = require("../database/users.js");
-var cors = require("cors");
-
 const app = express();
+const http = require("http");
+const server = http.createServer(app);
+const io = require("socket.io")(server);
+
+var cors = require("cors");
 const port = 3008;
 
 app.use(morgan("dev"));
@@ -15,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.resolve(__dirname + "/../client/public")));
 
+//// GET ////////////////////////
 app.get("/users", (req, res) => {
   // console.log(req.body);
   Users.find({})
@@ -25,6 +29,7 @@ app.get("/users", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+//// POST ////////////////////////
 app.post("/users", (req, res) => {
   Users.create(req.body)
     .then(() => {
@@ -33,6 +38,7 @@ app.post("/users", (req, res) => {
     .catch((error) => console.log(error));
 });
 
+//// PUT ////////////////////////////
 app.put("/users/:id", (req, res) => {
   var id = req.params.id;
   var time = req.body.topTime;
@@ -44,6 +50,7 @@ app.put("/users/:id", (req, res) => {
   });
 });
 
+//// DELETE ////////////////////////
 app.delete("/users", (req, res) => {
   var name = req.body.userName;
   Users.deleteOne({ userName: name })
@@ -53,6 +60,13 @@ app.delete("/users", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(port, () =>
-  console.log(`App listening at http://localhost:${port}`)
+//// SOCKET.IO //////////////////
+io.on("connection", (socket) => {
+  socket.on("chat message", (msg) => {
+    io.emit("chat message", msg);
+  });
+});
+
+server.listen(3001, () =>
+  console.log(`App listening at http://localhost:3001`)
 );
