@@ -61,5 +61,5 @@ app.delete("/users", (req, res) => {
 });
 
 server.listen(3001, () =>
-  console.log(`App listening at http://localhost:3001`)
+  console.log(`App listening at http://localhost:3008`)
 );
