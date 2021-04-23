@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App/App.jsx";
+import App from "../App";
 import axios from "axios";
 
 class CreatePlayer extends React.Component {

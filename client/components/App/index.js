@@ -2,10 +2,10 @@
 import axios from "axios";
 import React from "react";
 import CreatePlayer from "../CreatePlayer.jsx";
-import Board from "../Board.jsx";
+import Board from "../Board";
 import Timer from "../Timer.jsx";
 import Users from "../Users.jsx";
-import css from "./app.css";
+import css from "./styles.css";
 import ChatBox from "../ChatBox"; ///// shorter syntax for import with index.js file
 
 class App extends React.Component {
@@ -92,9 +92,9 @@ class App extends React.Component {
               <div className="player">
                 <h3>Player 1</h3>
                 <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-                <ChatBox />
                 <br></br>
                 <img src={this.state.currentPic}></img>
+                <ChatBox />
               </div>
             </div>
             <div className="player-container">

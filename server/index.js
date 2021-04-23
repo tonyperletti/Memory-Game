@@ -9,13 +9,13 @@ const http = require("http");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 
-var cors = require("cors");
+// var cors = require("cors");
 const port = 3008;
 
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+// app.use(cors());
 app.use(express.static(path.resolve(__dirname + "/../client/public")));
 
 //// GET ////////////////////////
@@ -58,13 +58,6 @@ app.delete("/users", (req, res) => {
       res.status(200).send("User deleted");
     })
     .catch((err) => console.log(err));
-});
-
-//// SOCKET.IO //////////////////
-io.on("connection", (socket) => {
-  socket.on("chat message", (msg) => {
-    io.emit("chat message", msg);
-  });
 });
 
 server.listen(3001, () =>
