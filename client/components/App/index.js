@@ -1,10 +1,10 @@
 /* eslint-disable quotes */
 import axios from "axios";
 import React from "react";
-import CreatePlayer from "../CreatePlayer.jsx";
+import CreatePlayer from "../CreatePlayer";
 import Board from "../Board";
-import Timer from "../Timer.jsx";
-import Users from "../Users.jsx";
+import Timer from "../Timer";
+import Player from "../Player";
 import css from "./styles.css";
 import ChatBox from "../ChatBox"; ///// shorter syntax for import with index.js file
 
@@ -108,7 +108,7 @@ class App extends React.Component {
           </div>
           <Board id={this.state.id} />
           {/* <Timer stop={this.initiateTimeStop()} /> */}
-          <Users users={this.state.users} />
+          <Player users={this.state.users} />
         </div>
       );
     }
