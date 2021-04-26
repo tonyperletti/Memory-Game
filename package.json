@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server/index.js",
-    "start2": "nodemon ./socket.io/index.js",
     "test": "jest --watchAll",
     "build": "webpack -d --watch"
   },

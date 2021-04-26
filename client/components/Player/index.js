@@ -41,6 +41,7 @@ export default class Users extends Component {
       .delete("/users", { data: { userName: name } })
       .then(() => {
         console.log("User deleted");
+        componentDidMount();
       })
       .catch((err) => console.log(err));
   }

@@ -94,7 +94,6 @@ class App extends React.Component {
                 <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
                 <br></br>
                 <img src={this.state.currentPic}></img>
-                <ChatBox />
               </div>
             </div>
             <div className="player-container">
@@ -107,6 +106,7 @@ class App extends React.Component {
             </div>
           </div>
           <Board id={this.state.id} />
+          {/* <ChatBox /> */}
           {/* <Timer stop={this.initiateTimeStop()} /> */}
           <Player users={this.state.users} />
         </div>
