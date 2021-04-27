@@ -3,24 +3,42 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const db = require("../database/index.js");
+const db2 = require("../database2/index.js");
 const Users = require("../database/users.js");
+const ChatBox = require("../database2/chatBox.js");
 const app = express();
-const http = require("http");
-const server = http.createServer(app);
-const io = require("socket.io")(server);
 const cors = require("cors");
 
-// var cors = require("cors");
 const port = 3008;
 
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(cors());
 app.use(express.static(path.resolve(__dirname + "/../client/public")));
 app.use(cors());
 
-//// GET ////////////////////////
+//// GET CHAT MESSAGE //////////////////////////////////////////////////
+app.get("/chatBox", (req, res) => {
+  // console.log(req.body);
+  ChatBox.find({})
+    .then((data) => {
+      // console.log(res);
+      res.send(data);
+    })
+    .catch((err) => console.log(err));
+});
+
+//// CHAT MESSAGE POST //////////////////////////////////////////////////
+app.post("/chatBox", (req, res) => {
+  console.log(req.body);
+  ChatBox.create(req.body)
+    .then(() => {
+      res.send("Chat Message Posted");
+    })
+    .catch((error) => console.log(error));
+});
+
+//// GET PLAYER /////////////////////////////////////////////
 app.get("/users", (req, res) => {
   // console.log(req.body);
   Users.find({})
@@ -31,7 +49,7 @@ app.get("/users", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//// POST ////////////////////////
+//// PLAYER POST ////////////////////////////////////////////
 app.post("/users", (req, res) => {
   Users.create(req.body)
     .then(() => {
@@ -40,7 +58,7 @@ app.post("/users", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-//// PUT ////////////////////////////
+//// PUT ///////////////////////////////////////////////////
 app.put("/users/:id", (req, res) => {
   var id = req.params.id;
   var time = req.body.topTime;
@@ -52,7 +70,7 @@ app.put("/users/:id", (req, res) => {
   });
 });
 
-//// DELETE ////////////////////////
+//// DELETE //////////////////////////////////////////////
 app.delete("/users", (req, res) => {
   var name = req.body.userName;
   Users.deleteOne({ userName: name })
@@ -62,6 +80,4 @@ app.delete("/users", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-server.listen(3001, () =>
-  console.log(`App listening at http://localhost:3001`)
-);
+app.listen(3001, () => console.log(`App listening at http://localhost:3001`));

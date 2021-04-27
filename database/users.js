@@ -4,7 +4,8 @@ mongoose.Promise = global.Promise;
 
 const usersSchema = new mongoose.Schema({
   id: Number,
-  userName: String,
+  userName1: String,
+  userName2: String,
   imageUrl: String,
   topTime: String,
 });

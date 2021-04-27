@@ -15,8 +15,7 @@ class App extends React.Component {
       users: [],
       name: "",
       image: "",
-      topTime: "0:00",
-      currentUser: "", //////// HARD CODED FIX THIS!!!!!
+      currentUser: "hey", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -67,7 +66,7 @@ class App extends React.Component {
       .get("/users/")
       .then((data) => {
         var users = data.data;
-        // console.log(data.data);
+        console.log(data.data);
         this.setState({
           users: users,
           currentUser: data.data[0].userName,
@@ -78,41 +77,39 @@ class App extends React.Component {
   }
 
   render() {
-    if (!this.state.currentUser) {
-      return (
-        <div>
-          <CreatePlayer />
-        </div>
-      );
-    } else {
-      return (
-        <div className="main-view">
-          <div className="players-panel">
-            <div className="player-container">
-              <div className="player">
-                <h3>Player 1</h3>
-                <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-                <br></br>
-                <img src={this.state.currentPic}></img>
-              </div>
-            </div>
-            <div className="player-container">
-              <div className="player">
-                <h3>Player 2</h3>
-                <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-                <br></br>
-                <img src={this.state.currentPic}></img>
-              </div>
+    // if (!this.state.currentUser) {
+    //   return (
+    //     <div>
+    //       <CreatePlayer />
+    //     </div>
+    //   );
+    // } else {
+    return (
+      <div className="main-view">
+        <div className="players-panel">
+          <div className="player-container">
+            <div className="player">
+              <h3>Player 1</h3>
+              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
+              <br></br>
+              <img src={this.state.currentPic}></img>
             </div>
           </div>
-          <Board id={this.state.id} />
-          {/* <ChatBox /> */}
-          {/* <Timer stop={this.initiateTimeStop()} /> */}
-          <Player users={this.state.users} />
+          <div className="player-container">
+            <div className="player">
+              <h3>Player 2</h3>
+              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
+              <br></br>
+              <img src={this.state.currentPic}></img>
+            </div>
+          </div>
         </div>
-      );
-    }
+        <ChatBox />
+        <Board id={this.state.id} />
+      </div>
+    );
   }
 }
+// }
 
 export default App;
