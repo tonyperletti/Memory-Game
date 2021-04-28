@@ -8,6 +8,6 @@ const chatBoxSchema = new mongoose.Schema({
   message: String,
 });
 
-const ChatBox = mongoose.model("chatBox", chatBoxSchema);
+const ChatBox = mongoose.model("ChatBox", chatBoxSchema);
 
 module.exports = ChatBox;
