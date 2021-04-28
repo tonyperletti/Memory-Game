@@ -5,7 +5,14 @@ import axios from "axios";
 class CreatePlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      players: [],
+      name: "",
+      image: "",
+      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
+      currentPic: "",
+      id: 1,
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.increaseId = this.increaseId.bind(this);
@@ -16,7 +23,7 @@ class CreatePlayer extends React.Component {
     this.setState({
       id: count++,
     });
-    console.log(this.state.id);
+    // console.log(this.state.id);
   }
 
   handleChange(event) {
@@ -27,38 +34,37 @@ class CreatePlayer extends React.Component {
     this.setState({
       [name]: value,
     });
+    console.log(this.state.name);
   }
 
   handleSubmit(event) {
-    // increaseId();
     axios
       .post("/players/", {
         id: this.state.id,
         userName: this.state.name,
         imageUrl: this.state.image,
-        topTime: this.state.topTime,
       })
       .then(() => {
         console.log("Submitted");
-        increaseId();
+        this.increaseId();
       })
       .catch((error) => console.log(error));
   }
 
-  componentDidMount() {
-    axios
-      .get("/players/")
-      .then((data) => {
-        var users = data.data;
-        // console.log(data.data);
-        this.setState({
-          users: users,
-          currentUser: data.data[0].userName,
-          currentPic: data.data[0].imageUrl,
-        });
-      })
-      .catch((error) => console.log(error));
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get("/players/")
+  //     .then((data) => {
+  //       var players = data.data;
+  //       console.log(players);
+  //       this.setState({
+  //         players: players,
+  //         currentPlayer: data.data[0].userName,
+  //         currentPic: data.data[0].imageUrl,
+  //       });
+  //     })
+  //     .catch((error) => console.log(error));
+  // }
   render() {
     return (
       <div className="user-form">

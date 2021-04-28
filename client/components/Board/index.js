@@ -26,8 +26,6 @@ class Board extends React.Component {
       this.classList.toggle("flip");
 
       if (!hasFlippedCard) {
-        /////////////////////////////////////////////
-        console.log("here");
         //first click
         hasFlippedCard = true;
         firstCard = this;

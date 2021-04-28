@@ -7,9 +7,8 @@ class ChatBox extends Component {
   constructor() {
     super();
     this.state = {
-      name1: true, /// HARDCODED
-      name2: false, /// HARDCODED
-      messages: ["Hey", "what"],
+      name: "Bob", /// HARDCODED
+      messages: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,13 +16,17 @@ class ChatBox extends Component {
   }
 
   getMessage() {
+    console.log("here");
     axios
       .get("/chatBox/")
       .then((data) => {
+        // console.log(data);
+        console.log("here2");
+
         var message = data.data[0].message;
-        console.log(data.data[0].message);
+        // console.log(data.data[0].message);
         this.setState({
-          messages: this.state.messages.push(message),
+          messages: message,
         });
         console.log(this.state.messages);
       })
@@ -42,15 +45,14 @@ class ChatBox extends Component {
 
   handleSubmit(event) {
     axios
-      .post("/chatBox", {
-        // userName1: this.state.name1,
-        // userName2: this.state.name2,
+      .post("/chatBox/", {
+        userName: this.state.name,
         message: this.state.message,
       })
-      // .then(() => {
-      //   console.log("Message Submitted");
-      //   this.getMessage();
-      // })
+      .then(() => {
+        console.log("Message Submitted");
+        this.getMessage();
+      })
       .catch((error) => console.log(error));
   }
 

@@ -3,7 +3,6 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const db = require("../database/index.js");
-const db2 = require("../database2/index.js");
 const Players = require("../database/players.js");
 const ChatBox = require("../database2/chatBox.js");
 const app = express();
@@ -18,11 +17,11 @@ app.use(express.static(path.resolve(__dirname + "/../client/public")));
 app.use(cors());
 
 //// GET CHAT MESSAGE //////////////////////////////////////////////////
-app.get("/chatBox", (req, res) => {
-  // console.log(req.body);
+app.get("/chatBox/", (req, res) => {
+  // console.log(req);
   ChatBox.find({})
     .then((data) => {
-      // console.log(res);
+      console.log(data);
       res.send(data);
     })
     .catch((err) => console.log(err));

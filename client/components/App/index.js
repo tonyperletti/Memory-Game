@@ -3,19 +3,18 @@ import axios from "axios";
 import React from "react";
 import CreatePlayer from "../CreatePlayer";
 import Board from "../Board";
-import Timer from "../Timer";
 import Player from "../Player";
 import css from "./styles.css";
-import ChatBox from "../ChatBox"; ///// shorter syntax for import with index.js file
+import ChatBox from "../ChatBox";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [],
+      players: ["tom", "bob"],
       name: "",
       image: "",
-      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "tom", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -63,14 +62,15 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("/players")
+      .get("/players/")
       .then((data) => {
+        // console.log(data);
         var players = data.data;
-        console.log(data.data);
+        // console.log(players);
         this.setState({
           players: players,
-          currentPlayer: data.data[0].userName,
-          currentPic: data.data[0].imageUrl,
+          currentPlayer: players[0].userName,
+          currentPic: players[0].imageUrl,
         });
       })
       .catch((error) => console.log(error));

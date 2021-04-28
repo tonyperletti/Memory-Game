@@ -3,8 +3,7 @@ mongoose.Promise = global.Promise;
 
 const playersSchema = new mongoose.Schema({
   id: Number,
-  userName1: String,
-  userName2: String,
+  userName: String,
   imageUrl: String,
 });
 

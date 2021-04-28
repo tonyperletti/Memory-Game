@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const chatBoxSchema = new mongoose.Schema({
-  // userName1: Boolean,
-  // userName2: Boolean,
+  userName: String,
   message: String,
 });
 
