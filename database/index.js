@@ -1,5 +1,5 @@
 // const mongoose = require("mongoose");
-// const mongoUri = "mongodb://localhost/users";
+// const mongoUri = "mongodb://localhost/players";
 
 // const db = mongoose.connect(mongoUri, {
 //   useUnifiedTopology: true,

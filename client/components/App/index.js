@@ -12,10 +12,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      players: [],
       name: "",
       image: "",
-      currentUser: "hey", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -32,7 +32,7 @@ class App extends React.Component {
     this.setState({
       id: count++,
     });
-    console.log(this.state.id);
+    // console.log(this.state.id);
   }
 
   handleChange(event) {
@@ -48,7 +48,7 @@ class App extends React.Component {
   handleSubmit(event) {
     // increaseId();
     axios
-      .post("/users/", {
+      .post("/players", {
         id: this.state.id,
         userName: this.state.name,
         imageUrl: this.state.image,
@@ -63,13 +63,13 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("/users/")
+      .get("/players")
       .then((data) => {
-        var users = data.data;
+        var players = data.data;
         console.log(data.data);
         this.setState({
-          users: users,
-          currentUser: data.data[0].userName,
+          players: players,
+          currentPlayer: data.data[0].userName,
           currentPic: data.data[0].imageUrl,
         });
       })
@@ -77,39 +77,39 @@ class App extends React.Component {
   }
 
   render() {
-    // if (!this.state.currentUser) {
-    //   return (
-    //     <div>
-    //       <CreatePlayer />
-    //     </div>
-    //   );
-    // } else {
-    return (
-      <div className="main-view">
-        <div className="players-panel">
-          <div className="player-container">
-            <div className="player">
-              <h3>Player 1</h3>
-              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-              <br></br>
-              <img src={this.state.currentPic}></img>
-            </div>
-          </div>
-          <div className="player-container">
-            <div className="player">
-              <h3>Player 2</h3>
-              <p style={{ fontWeight: "bold" }}>{this.state.currentUser}</p>
-              <br></br>
-              <img src={this.state.currentPic}></img>
-            </div>
-          </div>
+    if (!this.state.currentPlayer) {
+      return (
+        <div>
+          <CreatePlayer />
         </div>
-        <ChatBox />
-        <Board id={this.state.id} />
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="main-view">
+          <div className="players-panel">
+            <div className="player-container">
+              <div className="player">
+                <h3>Player 1</h3>
+                <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
+                <br></br>
+                <img src={this.state.currentPic}></img>
+              </div>
+            </div>
+            <div className="player-container">
+              <div className="player">
+                <h3>Player 2</h3>
+                <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
+                <br></br>
+                <img src={this.state.currentPic}></img>
+              </div>
+            </div>
+          </div>
+          <ChatBox />
+          <Board id={this.state.id} />
+        </div>
+      );
+    }
   }
 }
-// }
 
 export default App;

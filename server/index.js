@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const path = require("path");
 const db = require("../database/index.js");
 const db2 = require("../database2/index.js");
-const Users = require("../database/users.js");
+const Players = require("../database/players.js");
 const ChatBox = require("../database2/chatBox.js");
 const app = express();
 const cors = require("cors");
@@ -39,9 +39,9 @@ app.post("/chatBox", (req, res) => {
 });
 
 //// GET PLAYER /////////////////////////////////////////////
-app.get("/users", (req, res) => {
+app.get("/players/", (req, res) => {
   // console.log(req.body);
-  Users.find({})
+  Players.find({})
     .then((data) => {
       // console.log(res);
       res.send(data);
@@ -50,8 +50,8 @@ app.get("/users", (req, res) => {
 });
 
 //// PLAYER POST ////////////////////////////////////////////
-app.post("/users", (req, res) => {
-  Users.create(req.body)
+app.post("/players/", (req, res) => {
+  Players.create(req.body)
     .then(() => {
       res.send("User Info Posted");
     })
@@ -59,10 +59,10 @@ app.post("/users", (req, res) => {
 });
 
 //// PUT ///////////////////////////////////////////////////
-app.put("/users/:id", (req, res) => {
+app.put("/players/:id", (req, res) => {
   var id = req.params.id;
   var time = req.body.topTime;
-  Users.updateOne({ id: id }, { topTime: time }, (err, result) => {
+  Players.updateOne({ id: id }, { topTime: time }, (err, result) => {
     if (err) {
       console.log("Error updating reviews", err);
     }
@@ -71,11 +71,11 @@ app.put("/users/:id", (req, res) => {
 });
 
 //// DELETE //////////////////////////////////////////////
-app.delete("/users", (req, res) => {
+app.delete("/players/", (req, res) => {
   var name = req.body.userName;
-  Users.deleteOne({ userName: name })
+  Players.deleteOne({ userName: name })
     .then(() => {
-      res.status(200).send("User deleted");
+      res.status(200).send("Player deleted");
     })
     .catch((err) => console.log(err));
 });
