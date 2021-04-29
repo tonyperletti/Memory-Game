@@ -16,19 +16,17 @@ class ChatBox extends Component {
   }
 
   getMessage() {
-    console.log("here");
     axios
       .get("/chatBox/")
       .then((data) => {
-        // console.log(data);
         console.log("here2");
+        // console.log(data.data);
 
         var message = data.data[0].message;
-        // console.log(data.data[0].message);
+        console.log(message);
         this.setState({
           messages: message,
         });
-        console.log(this.state.messages);
       })
       .catch((error) => console.log(error));
   }
@@ -50,7 +48,6 @@ class ChatBox extends Component {
         message: this.state.message,
       })
       .then(() => {
-        console.log("Message Submitted");
         this.getMessage();
       })
       .catch((error) => console.log(error));

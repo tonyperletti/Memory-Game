@@ -18,10 +18,10 @@ app.use(cors());
 
 //// GET CHAT MESSAGE //////////////////////////////////////////////////
 app.get("/chatBox/", (req, res) => {
-  // console.log(req);
   ChatBox.find({})
     .then((data) => {
-      console.log(data);
+      // console.log(data);
+
       res.send(data);
     })
     .catch((err) => console.log(err));
@@ -29,7 +29,6 @@ app.get("/chatBox/", (req, res) => {
 
 //// CHAT MESSAGE POST //////////////////////////////////////////////////
 app.post("/chatBox", (req, res) => {
-  console.log(req.body);
   ChatBox.create(req.body)
     .then(() => {
       res.send("Chat Message Posted");
@@ -57,7 +56,7 @@ app.post("/players/", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-//// PUT ///////////////////////////////////////////////////
+//// PLAYER PUT ///////////////////////////////////////////////////
 app.put("/players/:id", (req, res) => {
   var id = req.params.id;
   var time = req.body.topTime;
@@ -69,7 +68,7 @@ app.put("/players/:id", (req, res) => {
   });
 });
 
-//// DELETE //////////////////////////////////////////////
+//// PLAYER DELETE //////////////////////////////////////////////
 app.delete("/players/", (req, res) => {
   var name = req.body.userName;
   Players.deleteOne({ userName: name })

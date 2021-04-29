@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoUri = "mongodb://localhost/players";
+const mongoUri = "mongodb://localhost/memory_game";
 
 const db = mongoose.connect(mongoUri, {
   useUnifiedTopology: true,
