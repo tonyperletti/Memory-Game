@@ -36,22 +36,24 @@ class ChatBox extends Component {
     const target = event.target;
     const value = target.value;
     const message = target.name;
-    const name = this.setState({
+    this.setState({
       [message]: value,
     });
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     axios
       .post("/messages", {
         userName: this.state.name,
         message: this.state.message,
       })
       .then(() => {
-        console.log(CreatePlayer._this.state.name);
-        // this.setState{(
+        // console.log(this.props.name);
 
-        // )};
+        this.setState({
+          message: [],
+        });
         // this.getMessage();
       })
       .catch((error) => console.log(error));

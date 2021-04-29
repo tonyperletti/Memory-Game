@@ -12,9 +12,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       players: ["tom", "bob"],
-      name: "",
+      name: "Harry",
       image: "",
-      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "Bob", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -104,7 +104,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <ChatBox />
+          <ChatBox name={this.state.name} />
           <Board id={this.state.id} />
         </div>
       );
