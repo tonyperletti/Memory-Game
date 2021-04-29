@@ -14,7 +14,7 @@ class App extends React.Component {
       players: ["tom", "bob"],
       name: "Harry",
       image: "",
-      currentPlayer: "Bob", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };

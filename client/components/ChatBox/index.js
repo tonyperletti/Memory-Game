@@ -52,7 +52,7 @@ class ChatBox extends Component {
         // console.log(this.props.name);
 
         this.setState({
-          message: [],
+          message: "",
         });
         // this.getMessage();
       })
