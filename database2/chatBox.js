@@ -6,6 +6,7 @@ const chatBoxSchema = new mongoose.Schema({
   message: String,
 });
 
-const ChatBox = mongoose.model("chatBox", chatBoxSchema);
+//  Creates the Mongo Collection Named 'chatboxes' ////////
+const ChatBox = mongoose.model("chatboxes", chatBoxSchema);
 
 module.exports = ChatBox;
