@@ -7,6 +7,7 @@ const playersSchema = new mongoose.Schema({
   imageUrl: String,
 });
 
-const Players = mongoose.model("Players", playersSchema);
+// Creates the Mongo Collection named "players" /////////
+const Players = mongoose.model("players", playersSchema);
 
 module.exports = Players;

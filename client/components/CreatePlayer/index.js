@@ -7,7 +7,7 @@ class CreatePlayer extends React.Component {
     super(props);
     this.state = {
       players: [],
-      name: "",
+      name: "TONY",
       image: "",
       currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
@@ -34,7 +34,6 @@ class CreatePlayer extends React.Component {
     this.setState({
       [name]: value,
     });
-    console.log(this.state.name);
   }
 
   handleSubmit(event) {

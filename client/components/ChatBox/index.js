@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import CreatePlayer from "../CreatePlayer";
 
 var socket;
 
@@ -7,7 +8,7 @@ class ChatBox extends Component {
   constructor() {
     super();
     this.state = {
-      name: "Bob", /// HARDCODED
+      name: "", /// HARDCODED
       messages: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +18,7 @@ class ChatBox extends Component {
 
   getMessage() {
     axios
-      .get("/chatBox/")
+      .get("/messages")
       .then((data) => {
         console.log("here2");
         // console.log(data.data);
@@ -35,20 +36,23 @@ class ChatBox extends Component {
     const target = event.target;
     const value = target.value;
     const message = target.name;
-
-    this.setState({
+    const name = this.setState({
       [message]: value,
     });
   }
 
   handleSubmit(event) {
     axios
-      .post("/chatBox/", {
+      .post("/messages", {
         userName: this.state.name,
         message: this.state.message,
       })
       .then(() => {
-        this.getMessage();
+        console.log(CreatePlayer._this.state.name);
+        // this.setState{(
+
+        // )};
+        // this.getMessage();
       })
       .catch((error) => console.log(error));
   }

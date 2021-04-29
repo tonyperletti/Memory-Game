@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const path = require("path");
 const db = require("../database/index.js");
 const Players = require("../database/players.js");
-const ChatBox = require("../database2/chatBox.js");
+const Messages = require("../database2/messages.js");
 const app = express();
 const cors = require("cors");
 
@@ -17,8 +17,8 @@ app.use(express.static(path.resolve(__dirname + "/../client/public")));
 app.use(cors());
 
 //// GET CHAT MESSAGE //////////////////////////////////////////////////
-app.get("/chatBox/", (req, res) => {
-  ChatBox.find({})
+app.get("/messages/", (req, res) => {
+  Messages.find({})
     .then((data) => {
       // console.log(data);
 
@@ -28,8 +28,8 @@ app.get("/chatBox/", (req, res) => {
 });
 
 //// CHAT MESSAGE POST //////////////////////////////////////////////////
-app.post("/chatBox", (req, res) => {
-  ChatBox.create(req.body)
+app.post("/messages/", (req, res) => {
+  Messages.create(req.body)
     .then(() => {
       res.send("Chat Message Posted");
     })
