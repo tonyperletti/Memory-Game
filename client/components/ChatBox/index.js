@@ -20,13 +20,13 @@ class ChatBox extends Component {
     axios
       .get("/messages")
       .then((data) => {
-        console.log("here2");
-        // console.log(data.data);
-
-        var message = data.data[0].message;
-        console.log(message);
+        var messagesObj = data.data;
+        let messagesArr = [];
+        for (const key in messagesObj) {
+          messagesArr.push(messagesObj[key].message);
+        }
         this.setState({
-          messages: message,
+          messages: messagesArr,
         });
       })
       .catch((error) => console.log(error));
@@ -50,11 +50,9 @@ class ChatBox extends Component {
       })
       .then(() => {
         document.getElementById("form").reset();
-
-        // this.setState({
-        //   message: "",
-        // });
-        // this.getMessage();
+      })
+      .then(() => {
+        this.getMessage();
       })
       .catch((error) => console.log(error));
   }
