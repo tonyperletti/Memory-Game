@@ -20,7 +20,7 @@ app.use(cors());
 app.get("/messages/", (req, res) => {
   Messages.find({})
     .then((data) => {
-      // console.log(data);
+      console.log("messages found");
 
       res.send(data);
     })

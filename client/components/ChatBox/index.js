@@ -49,11 +49,11 @@ class ChatBox extends Component {
         message: this.state.message,
       })
       .then(() => {
-        // console.log(this.props.name);
+        document.getElementById("form").reset();
 
-        this.setState({
-          message: "",
-        });
+        // this.setState({
+        //   message: "",
+        // });
         // this.getMessage();
       })
       .catch((error) => console.log(error));
