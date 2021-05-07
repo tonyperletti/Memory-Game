@@ -27,7 +27,7 @@ app.get("/messages/", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//// CHAT MESSAGE POST //////////////////////////////////////////////////
+//// POST CHAT MESSAGE //////////////////////////////////////////////////
 app.post("/messages/", (req, res) => {
   Messages.create(req.body)
     .then(() => {
@@ -36,7 +36,7 @@ app.post("/messages/", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-//// CHAT DROP DATABASE //////////////////////////////////////
+//// DROP MESSAGES COLLECTION //////////////////////////////////////
 app.delete("/messages/", (req, res) => {
   Messages.remove()
     .then(() => {
@@ -56,7 +56,7 @@ app.get("/players/", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-//// PLAYER POST ////////////////////////////////////////////
+//// POST PLAYER ////////////////////////////////////////////
 app.post("/players/", (req, res) => {
   Players.create(req.body)
     .then(() => {
@@ -65,7 +65,7 @@ app.post("/players/", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-//// PLAYER PUT ///////////////////////////////////////////////////
+//// PUT PLAYER ///////////////////////////////////////////////////
 app.put("/players/:id", (req, res) => {
   var id = req.params.id;
   var time = req.body.topTime;

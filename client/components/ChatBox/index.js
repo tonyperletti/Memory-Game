@@ -63,7 +63,9 @@ class ChatBox extends Component {
     axios
       .delete("/messages", { data: {} })
       .then(() => {
-        console.log("success");
+        this.setState({
+          messages: [],
+        });
       })
       .catch((error) => console.log(error));
   }
