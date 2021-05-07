@@ -8,12 +8,13 @@ class ChatBox extends Component {
   constructor() {
     super();
     this.state = {
-      name: "", /// HARDCODED
+      name: "TONY", /// HARDCODED
       messages: [],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.getMessage = this.getMessage.bind(this);
+    this.dropDatabase = this.dropDatabase.bind(this);
   }
 
   getMessage() {
@@ -49,10 +50,20 @@ class ChatBox extends Component {
         message: this.state.message,
       })
       .then(() => {
+        ///// RESET TEXT FIELD IN FORM AFTER SUBMIT //////
         document.getElementById("form").reset();
       })
       .then(() => {
         this.getMessage();
+      })
+      .catch((error) => console.log(error));
+  }
+
+  dropDatabase() {
+    axios
+      .delete("/messages", { data: {} })
+      .then(() => {
+        console.log("success");
       })
       .catch((error) => console.log(error));
   }
@@ -76,6 +87,9 @@ class ChatBox extends Component {
             <h3 key={i}>{message}</h3>
           ))}
         </div>
+        <button id="drop" onClick={this.dropDatabase}>
+          Delete Chat History
+        </button>
       </div>
     );
   }

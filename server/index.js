@@ -36,6 +36,15 @@ app.post("/messages/", (req, res) => {
     .catch((error) => console.log(error));
 });
 
+//// CHAT DROP DATABASE //////////////////////////////////////
+app.delete("/messages/", (req, res) => {
+  Messages.remove()
+    .then(() => {
+      res.send("Messages Dropped");
+    })
+    .catch((error) => console.log(error));
+});
+
 //// GET PLAYER /////////////////////////////////////////////
 app.get("/players/", (req, res) => {
   // console.log(req.body);
