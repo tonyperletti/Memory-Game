@@ -1,3 +1,5 @@
-.chat-border {
+.chat-box {
+  width: 500px;
   border: solid 1px black;
+  background-color: skyblue;
 }

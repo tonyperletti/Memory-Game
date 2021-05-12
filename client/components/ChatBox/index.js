@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import CreatePlayer from "../CreatePlayer";
-import css from "./styles.css";
+import css from "../ChatBox/styles.css";
 
 var socket;
 
@@ -74,7 +74,7 @@ class ChatBox extends Component {
   render() {
     return (
       <div>
-        <div className="chat-border">
+        <div className="chat-box">
           <ul id="messages">Chat</ul>
           <form id="form" action="">
             <input

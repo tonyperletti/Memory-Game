@@ -30,3 +30,11 @@ body {
   margin: auto;
   /* border: solid 1px red; */
 }
+
+.chat-game-section {
+  display: flex;
+}
+
+.chatBox {
+  background-color: skyblue;
+}

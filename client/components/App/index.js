@@ -104,8 +104,14 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <ChatBox name={this.state.name} />
-          <Board id={this.state.id} />
+          <div className="chat-game-section">
+            <div className="chatBox">
+              <ChatBox name={this.state.name} />
+            </div>
+            <div className="board">
+              <Board id={this.state.id} />
+            </div>
+          </div>
         </div>
       );
     }
