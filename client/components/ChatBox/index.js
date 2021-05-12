@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import CreatePlayer from "../CreatePlayer";
+import css from "./styles.css";
 
 var socket;
 
