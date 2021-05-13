@@ -16,6 +16,8 @@ body {
   flex-wrap: wrap;
   perspective: 1000px;
   background-color: green;
+  margin-left: 125px;
+  margin-top: -200px;
 }
 
 .memory-card {

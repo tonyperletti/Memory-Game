@@ -74,6 +74,10 @@ class ChatBox extends Component {
       .catch((error) => console.log(error));
   }
 
+  componentDidMount() {
+    this.getMessage();
+  }
+
   render() {
     return (
       <div>
@@ -92,10 +96,10 @@ class ChatBox extends Component {
           {this.state.messages.map((message, i) => (
             <h3 key={i}>{message}</h3>
           ))}
+          <button id="drop" onClick={this.dropDatabase}>
+            Delete Chat History
+          </button>
         </div>
-        <button id="drop" onClick={this.dropDatabase}>
-          Delete Chat History
-        </button>
       </div>
     );
   }
