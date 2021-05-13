@@ -1,5 +1,20 @@
 .chat-box {
-  width: 500px;
+  display: grid;
+  width: 400px;
   border: solid 1px black;
   background-color: skyblue;
+}
+
+#messages {
+  margin: auto;
+}
+
+#form {
+  margin: auto;
+}
+
+#drop {
+  display: grid;
+  margin: auto;
+  align-items: center;
 }
