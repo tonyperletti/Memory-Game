@@ -11,8 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: ["tom", "bob"],
-      name: "Harry",
+      players: [], // ["tom", "bob"],
+      name: "",
       image: "",
       currentPlayer: "Me", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
@@ -86,16 +86,14 @@ class App extends React.Component {
     } else {
       return (
         <div className="main-view">
-          <div className="players-panel">
-            <div className="player-container">
+          <div className="player-chat-container">
+            <div className="players-container">
               <div className="player">
                 <h3>Player 1</h3>
                 <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
                 <br></br>
                 <img src={this.state.currentPic}></img>
               </div>
-            </div>
-            <div className="player-container">
               <div className="player">
                 <h3>Player 2</h3>
                 <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
@@ -103,11 +101,11 @@ class App extends React.Component {
                 <img src={this.state.currentPic}></img>
               </div>
             </div>
-          </div>
-          <div className="chat-game-section">
             <div className="chatBox">
               <ChatBox name={this.state.name} />
             </div>
+          </div>
+          <div className="board-container">
             <div className="board">
               <Board id={this.state.id} />
             </div>

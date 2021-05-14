@@ -14,24 +14,32 @@ body {
 
 .main-view {
   margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.player-chat-container {
+  margin-right: 200px;
+  /* margin: auto; */
   display: grid;
+  border: solid 1px red;
 }
 
-.players-panel {
+.players-container {
+  /* padding-right: 50px; */
+  /* width: 125%; */
   display: flex;
-  justify-content: space-between;
-}
-
-.player-container {
-  display: flex;
-  justify-content: space-around;
+  border: solid 1px blue;
+  margin: auto;
+  /* justify-content: space-between; */
 }
 
 .player {
   margin: auto;
+  padding: 15px;
   /* border: solid 1px red; */
 }
 
-.chat-game-section {
+.board-container {
   display: flex;
 }

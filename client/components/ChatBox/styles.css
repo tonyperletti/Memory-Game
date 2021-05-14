@@ -1,5 +1,6 @@
 .chat-box {
   display: grid;
+  margin: auto;
   width: 400px;
   border: solid 1px black;
   background-color: skyblue;
