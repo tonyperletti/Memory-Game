@@ -12,6 +12,15 @@ body {
   background-color: green;
 }
 
+.game-title {
+  box-sizing: border-box;
+  padding-top: 50px;
+  border: solid 1px red;
+  margin-left: 200px;
+  font-size: 50px;
+  color: rgb(13, 16, 212);
+}
+
 .main-view {
   margin: auto;
   display: flex;
@@ -19,15 +28,14 @@ body {
 }
 
 .player-chat-container {
-  margin-top: 200px;
-  margin-left: 50px;
-
+  margin-top: 100px;
+  margin-left: 90px;
   display: grid;
   border: solid 1px red;
 }
 
 .players-container {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   width: 700px;
   height: auto;
   display: flex;
@@ -36,19 +44,32 @@ body {
 }
 
 .player {
+  background-color: rgb(220, 227, 228);
+  box-sizing: border-box;
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  border: solid 1px purple;
-  /* padding: 15px; */
+  border: solid 2px rgb(0, 23, 128);
+  border-radius: 15px;
+}
+
+.player-name {
+  font-size: 25px;
+  font-weight: bold;
+  margin: auto;
+  padding: 10px;
+  color: rgb(13, 16, 212);
 }
 
 #player1 {
+  border-radius: 10px;
   width: 75%;
   height: auto;
 }
 
 #player2 {
+  border-radius: 10px;
   margin: auto;
   width: 75%;
   height: auto;

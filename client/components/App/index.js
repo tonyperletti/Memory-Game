@@ -86,17 +86,16 @@ class App extends React.Component {
       return (
         <div className="main-view">
           <div className="player-chat-container">
+            <div className="game-title">MEMORY GAME</div>
             <div className="players-container">
               <div className="player">
-                <h3>Player 1</h3>
-                <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
-                <br></br>
+                <h2>Player 1</h2>
+                <p className="player-name">{this.state.currentPlayer}</p>
                 <img id="player1" src={this.state.currentPic}></img>
               </div>
               <div className="player">
-                <h3>Player 2</h3>
-                <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
-                <br></br>
+                <h2>Player 2</h2>
+                <p className="player-name">{this.state.currentPlayer}</p>
                 <img id="player2" src={this.state.currentPic}></img>
               </div>
             </div>

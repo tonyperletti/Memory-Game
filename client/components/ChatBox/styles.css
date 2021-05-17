@@ -1,8 +1,8 @@
 .chat-box {
   display: grid;
   margin: auto;
-  width: 700px;
-  height: 400px;
+  width: 560px;
+  height: 450px;
   border: solid 1px black;
   background-color: skyblue;
   border-radius: 15px;
@@ -10,14 +10,21 @@
 
 #messages {
   margin: auto;
+  font-size: 30px;
 }
 
 #form {
   margin: auto;
 }
 
+#input {
+  width: 400px;
+  height: 30px;
+  padding: 7px;
+}
+
 #drop {
   display: grid;
   margin: auto;
-  align-items: center;
+  /* align-items: center; */
 }
