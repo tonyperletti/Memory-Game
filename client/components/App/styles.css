@@ -12,15 +12,6 @@ body {
   background-color: green;
 }
 
-.game-title {
-  box-sizing: border-box;
-  padding-top: 50px;
-  border: solid 1px red;
-  margin-left: 200px;
-  font-size: 50px;
-  color: rgb(13, 16, 212);
-}
-
 .main-view {
   margin: auto;
   display: flex;
@@ -28,10 +19,19 @@ body {
 }
 
 .player-chat-container {
-  margin-top: 100px;
+  /* margin-top: 50px; */
   margin-left: 90px;
   display: grid;
-  border: solid 1px red;
+}
+
+.game-title {
+  box-sizing: border-box;
+  padding: 10px;
+  padding-bottom: 50px;
+  margin: auto;
+  /* margin: auto; */
+  font-size: 70px;
+  color: rgb(13, 16, 212);
 }
 
 .players-container {
@@ -39,8 +39,6 @@ body {
   width: 700px;
   height: auto;
   display: flex;
-  border: solid 1px blue;
-  /* margin: auto; */
 }
 
 .player {
