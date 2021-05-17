@@ -13,7 +13,7 @@ class App extends React.Component {
       players: [], // ["tom", "bob"],
       name: "",
       image: "",
-      currentPlayer: "Me", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "me", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -65,7 +65,7 @@ class App extends React.Component {
       .then((data) => {
         // console.log(data);
         var players = data.data;
-        // console.log(players);
+        console.log(players);
         this.setState({
           players: players,
           currentPlayer: players[0].userName,
