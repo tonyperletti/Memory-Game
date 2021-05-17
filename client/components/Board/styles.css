@@ -1,6 +1,6 @@
 * {
   padding: 0;
-  margin: -100;
+  /* margin: -100; */
   box-sizing: border-box;
 }
 
@@ -9,8 +9,9 @@ body {
 }
 
 .memory-game {
-  width: 640px;
-  height: 640px;
+  box-sizing: border-box;
+  width: 650px;
+  height: 650px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +23,7 @@ body {
 }
 
 .memory-card {
+  box-sizing: border-box;
   width: calc(25% - 10px);
   height: calc(33.33% - 10px);
   margin: 5px;

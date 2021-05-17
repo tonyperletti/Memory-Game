@@ -234,6 +234,58 @@ class Board extends React.Component {
             alt="Card Back"
           />
         </div>
+        <div className="memory-card" data-framework="galaxy">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
+            alt="Galaxy"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="galaxy">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
+            alt="Galaxy"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="galaxy">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
+            alt="Galaxy"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
+        <div className="memory-card" data-framework="galaxy">
+          <img
+            className="front-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
+            alt="Galaxy"
+          />
+
+          <img
+            className="back-face"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/cardBack.png"
+            alt="Card Back"
+          />
+        </div>
       </div>
     );
   }

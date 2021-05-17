@@ -24,9 +24,12 @@ const Individual = styled.div`
   background-color: silver;
 `;
 
-const Picture = styled.img``;
+const Picture = styled.img`
+  width: 50%;
+  height: 15px%;
+`;
 
-export default class Users extends Component {
+export default class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,9 +41,9 @@ export default class Users extends Component {
   handleClick(event) {
     var name = event.target.className;
     axios
-      .delete("/users", { data: { userName: name } })
+      .delete("/players", { data: { userName: name } })
       .then(() => {
-        console.log("User deleted");
+        console.log("Player deleted");
         componentDidMount();
       })
       .catch((err) => console.log(err));
@@ -52,7 +55,7 @@ export default class Users extends Component {
     return (
       <div>
         <Container>
-          {this.props.users.map((user, i) => (
+          {/* {this.props.users.map((user, i) => (
             <Fragment key={i}>
               <Block>
                 <Individual>{user.userName}</Individual>
@@ -63,7 +66,13 @@ export default class Users extends Component {
                 </button>
               </Block>
             </Fragment>
-          ))}
+          ))} */}
+          <div>
+            <p>
+              Use this Component to delete players from database at the end of
+              the game
+            </p>
+          </div>
         </Container>
       </div>
     );

@@ -3,7 +3,6 @@ import axios from "axios";
 import React from "react";
 import CreatePlayer from "../CreatePlayer";
 import Board from "../Board";
-import Player from "../Player";
 import css from "./styles.css";
 import ChatBox from "../ChatBox";
 
@@ -92,13 +91,13 @@ class App extends React.Component {
                 <h3>Player 1</h3>
                 <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
                 <br></br>
-                <img src={this.state.currentPic}></img>
+                <img id="player1" src={this.state.currentPic}></img>
               </div>
               <div className="player">
                 <h3>Player 2</h3>
                 <p style={{ fontWeight: "bold" }}>{this.state.currentPlayer}</p>
                 <br></br>
-                <img src={this.state.currentPic}></img>
+                <img id="player2" src={this.state.currentPic}></img>
               </div>
             </div>
             <div className="chatBox">
