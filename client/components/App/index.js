@@ -13,7 +13,7 @@ class App extends React.Component {
       players: [], // ["tom", "bob"],
       name: "",
       image: "",
-      currentPlayer: "me", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
