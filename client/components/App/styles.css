@@ -32,6 +32,7 @@ body {
   /* margin: auto; */
   font-size: 70px;
   color: rgb(13, 16, 212);
+  -webkit-text-stroke: 1px black;
 }
 
 .players-container {
@@ -50,7 +51,7 @@ body {
   text-align: center;
   border: solid 2px rgb(0, 23, 128);
   border-radius: 15px;
-  width: 170px;
+  width: 200px;
   height: 200px;
 }
 

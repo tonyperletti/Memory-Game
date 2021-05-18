@@ -1,7 +1,8 @@
 .chat-box {
+  box-sizing: border-box;
   display: grid;
   margin: auto;
-  width: 560px;
+  width: 500px;
   height: 450px;
   border: solid 1px black;
   background-color: skyblue;
@@ -18,9 +19,11 @@
 }
 
 #input {
+  box-sizing: border-box;
   width: 400px;
   height: 30px;
   padding: 7px;
+  /* margin-bottom: 320px; */
 }
 
 #drop {
