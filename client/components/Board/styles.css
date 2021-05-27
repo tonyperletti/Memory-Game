@@ -16,14 +16,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
-  background-color: green;
+  background-image: url("https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png");
   padding: 60px;
   padding-bottom: 230px;
   /* padding-top: 50px; */
   margin-left: 70px;
   margin-top: 70px;
-  border-radius: 25%;
-  border: solid 25px rgb(70, 42, 42);
+  /* border-radius: 25%;
+  border: solid 25px rgb(70, 42, 42); */
   /* border-style: groove; */
 }
 

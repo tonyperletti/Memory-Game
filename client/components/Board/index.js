@@ -276,7 +276,6 @@ class Board extends React.Component {
         <div className="memory-card" data-framework="card_table">
           <img
             className="front-face"
-            style="transform: rotate(45deg)"
             src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png"
             alt="Card Table"
           />

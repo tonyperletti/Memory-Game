@@ -104,6 +104,12 @@ class App extends React.Component {
             </div>
           </div>
           <div className="board-container">
+            {/* <img
+              id="card-table"
+              src={
+                "https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png"
+              }
+            ></img> */}
             <div className="board">
               <Board id={this.state.id} />
             </div>
