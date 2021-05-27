@@ -273,11 +273,12 @@ class Board extends React.Component {
             alt="Card Back"
           />
         </div>
-        <div className="memory-card" data-framework="galaxy">
+        <div className="memory-card" data-framework="card_table">
           <img
             className="front-face"
-            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card8.png"
-            alt="Galaxy"
+            style="transform: rotate(45deg)"
+            src="https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png"
+            alt="Card Table"
           />
 
           <img
