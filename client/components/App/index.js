@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [], // ["tom", "bob"],
+      players: ["tom", "bob"], // ["tom", "bob"],
       name: "",
       image: "",
       currentPlayer: "me", //////// HARD CODED FIX THIS!!!!!
@@ -85,34 +85,26 @@ class App extends React.Component {
     } else {
       return (
         <div className="main-view">
-          <div className="player-chat-container">
-            <div className="game-title">MEMORY GAME</div>
+          <div className="game-title">MEMORY GAME</div>
+          <div className="game-container">
+            <div className="board">
+              <Board id={this.state.id} />
+            </div>
             <div className="players-container">
               <div className="player">
-                <h2>Player 1</h2>
+                {/* <h2>Player 1</h2> */}
                 <p className="player-name">{this.state.currentPlayer}</p>
                 <img id="player1" src={this.state.currentPic}></img>
               </div>
               <div className="player">
-                <h2>Player 2</h2>
+                {/* <h2>Player 2</h2> */}
                 <p className="player-name">{this.state.currentPlayer}</p>
                 <img id="player2" src={this.state.currentPic}></img>
               </div>
             </div>
-            <div className="chatBox">
-              <ChatBox name={this.state.name} />
-            </div>
           </div>
-          <div className="board-container">
-            <img
-              id="card-table"
-              src={
-                "https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png"
-              }
-            ></img>
-            <div className="board">
-              <Board id={this.state.id} />
-            </div>
+          <div className="chatBox">
+            <ChatBox name={this.state.name} />
           </div>
         </div>
       );

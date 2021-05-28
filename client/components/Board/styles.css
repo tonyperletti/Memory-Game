@@ -7,27 +7,46 @@ body {
   height: 100vh;
 }
 
-.memory-game {
+.memory-game-container {
   box-sizing: border-box;
-  width: 900px;
-  height: 850px;
+  width: 1375px;
+  height: 700px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+  background-image: url("https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  margin-left: 140px;
+}
+
+.memory-game {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c c c c";
+  column-gap: -25px;
   perspective: 1000px;
+<<<<<<< HEAD
   background-image: url("https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png");
   padding: 60px;
   padding-bottom: 230px;
   margin-left: 70px;
   margin-top: 70px;
+=======
+  padding-top: 92px;
+  padding-left: 50px;
+>>>>>>> 3c22d0287b9d3d8ff6b44047100a577f59d3fcf6
 }
 
 .memory-card {
-  box-sizing: border-box;
-  width: calc(25% - 10px);
-  height: calc(33.33% - 10px);
+  width: 125px;
+  height: 160px;
   margin: 5px;
-  position: relative;
+  /* position: relative; */
   transform: scale(1);
   transition: 0.5s;
   transform-style: preserve-3d;
