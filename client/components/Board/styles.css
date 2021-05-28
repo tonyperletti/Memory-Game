@@ -1,6 +1,5 @@
 * {
   padding: 0;
-  /* margin: -100; */
   box-sizing: border-box;
 }
 
@@ -9,7 +8,6 @@ body {
 }
 
 .memory-game-container {
-  margin: auto;
   box-sizing: border-box;
   width: 1375px;
   height: 700px;
@@ -18,16 +16,10 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 10px;
-  /* padding: 100px; */
-  /* padding-bottom: 230px; */
-  /* padding-top: 50px; */
   margin-left: 140px;
 }
 
 .memory-game {
-  /* position: absolute; */
-  /* top: -100px; */
-  /* box-sizing: border-box; */
   width: 800px;
   height: 500px;
   margin: auto;
@@ -38,11 +30,8 @@ body {
     "c c c c";
   column-gap: -25px;
   perspective: 1000px;
-  /* padding: 100px; */
-  /* padding-bottom: 230px; */
   padding-top: 92px;
   padding-left: 50px;
-  /* border: solid red 1px; */
 }
 
 .memory-card {

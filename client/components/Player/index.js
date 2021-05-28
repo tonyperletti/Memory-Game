@@ -33,7 +33,7 @@ export default class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      users: ["Ted", "Fred"],
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -55,7 +55,7 @@ export default class Player extends Component {
     return (
       <div>
         <Container>
-          {/* {this.props.users.map((user, i) => (
+          {this.props.users.map((user, i) => (
             <Fragment key={i}>
               <Block>
                 <Individual>{user.userName}</Individual>
@@ -66,7 +66,7 @@ export default class Player extends Component {
                 </button>
               </Block>
             </Fragment>
-          ))} */}
+          ))}
           <div>
             <p>
               Use this Component to delete players from database at the end of

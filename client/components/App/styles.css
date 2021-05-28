@@ -18,42 +18,41 @@ body {
   /* vertical-align: auto; */
 }
 
-.player-chat-container {
-  /* margin-top: 50px; */
-  margin-left: 90px;
-  width: 300px;
-  /* height: 50px; */
-  display: grid;
-  border: solid red 4px;
-}
-
 .game-title {
-  box-sizing: border-box;
-  /* padding: 10px; */
-  padding-bottom: 50px;
   margin: auto;
-  /* margin: auto; */
+  text-align: center;
+  width: 40%;
+  height: 55%;
+  position: relative;
+  border: solid rgb(77, 28, 1) 10px;
+  border-radius: 25px;
+  background-color: rgb(153, 0, 0);
+  font-family: "Limelight", cursive;
+  box-sizing: border-box;
+  padding-bottom: 68px;
   font-size: 70px;
-  color: rgb(13, 16, 212);
+  color: rgb(253, 194, 1);
   -webkit-text-stroke: 1px black;
 }
 
+.game-container {
+  /* position: absolute; */
+}
+
 .players-container {
-  margin-bottom: 30px;
-  width: 700px;
-  height: 80%;
+  z-index: 100;
+  margin: auto;
+  width: 69%;
+  margin-top: -470px;
+  margin-bottom: 300px;
+  height: auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .player {
-  background-color: rgb(220, 227, 228);
   box-sizing: border-box;
-  /* padding: 3px; */
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
-  border: solid 2px rgb(0, 23, 128);
-  border-radius: 15px;
   width: 200px;
   height: 200px;
 }
@@ -63,30 +62,22 @@ body {
   font-weight: bold;
   margin: auto;
   padding: 3px;
-  color: rgb(13, 16, 212);
+  border: solid black 3px;
+  border-radius: 15px;
+  width: 75%;
+  background-color: lightcyan;
 }
 
 #player1 {
-  margin: auto;
-  border-radius: 10px;
+  margin: 10px;
+  border-radius: 50%;
   width: 65%;
   height: 65%;
 }
 
 #player2 {
-  margin: auto;
-  border-radius: 10px;
+  margin: 10px;
+  border-radius: 50%;
   width: 65%;
   height: 65%;
-}
-
-.board-container {
-  display: flex;
-  box-sizing: border-box;
-  margin-top: -50px;
-  margin-right: 150px;
-  /* transform: rotate(90deg); */
-}
-
-.board {
 }
