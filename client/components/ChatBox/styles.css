@@ -2,8 +2,8 @@
   box-sizing: border-box;
   display: grid;
   margin: auto;
-  width: 500px;
-  height: 450px;
+  /* width: 500px; */
+  /* height: 450px; */
   border: solid 1px black;
   background-color: skyblue;
   border-radius: 15px;
