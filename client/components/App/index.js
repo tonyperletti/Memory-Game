@@ -92,14 +92,12 @@ class App extends React.Component {
             </div>
             <div className="players-container">
               <div className="player">
-                {/* <h2>Player 1</h2> */}
-                <p className="player-name">{this.state.currentPlayer}</p>
                 <img id="player1" src={this.state.currentPic}></img>
+                <p className="player-name">{this.state.currentPlayer}</p>
               </div>
               <div className="player">
-                {/* <h2>Player 2</h2> */}
-                <p className="player-name">{this.state.currentPlayer}</p>
                 <img id="player2" src={this.state.currentPic}></img>
+                <p className="player-name">{this.state.currentPlayer}</p>
               </div>
             </div>
           </div>
