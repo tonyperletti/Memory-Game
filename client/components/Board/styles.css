@@ -8,30 +8,45 @@ body {
   height: 100vh;
 }
 
-.memory-game {
-  box-sizing: border-box;
-  width: 900px;
-  height: 850px;
+.memory-game-container {
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  perspective: 1000px;
-  background-image: url("https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png");
-  padding: 60px;
-  padding-bottom: 230px;
+  box-sizing: border-box;
+  width: 1375px;
+  height: 700px;
+  margin: auto;
+  background-image: url("https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* padding: 100px; */
+  /* padding-bottom: 230px; */
   /* padding-top: 50px; */
-  margin-left: 70px;
-  margin-top: 70px;
-  /* border-radius: 25%;
-  border: solid 25px rgb(70, 42, 42); */
-  /* border-style: groove; */
+  margin-left: 140px;
+}
+
+.memory-game {
+  position: relative;
+  /* top: -100px; */
+  box-sizing: border-box;
+  width: 1375px;
+  height: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "c c c c";
+  perspective: 1000px;
+  /* padding: 100px; */
+  /* padding-bottom: 230px; */
+  /* padding-top: 50px; */
+  /* margin-left: 140px; */
+  border: solid red 1px;
 }
 
 .memory-card {
-  box-sizing: border-box;
-  width: calc(25% - 10px);
-  height: calc(33.33% - 10px);
-  margin: 5px;
+  width: 125px;
+  height: 170px;
+  /* margin: 5px; */
   position: relative;
   transform: scale(1);
   transition: 0.5s;

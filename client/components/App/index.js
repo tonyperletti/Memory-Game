@@ -85,8 +85,13 @@ class App extends React.Component {
     } else {
       return (
         <div className="main-view">
+          <div className="game-title">MEMORY GAME</div>
+          <div className="board-container">
+            <div className="board">
+              <Board id={this.state.id} />
+            </div>
+          </div>
           <div className="player-chat-container">
-            <div className="game-title">MEMORY GAME</div>
             <div className="players-container">
               <div className="player">
                 <h2>Player 1</h2>
@@ -101,17 +106,6 @@ class App extends React.Component {
             </div>
             <div className="chatBox">
               <ChatBox name={this.state.name} />
-            </div>
-          </div>
-          <div className="board-container">
-            <img
-              id="card-table"
-              src={
-                "https://tonymvp.s3-us-west-2.amazonaws.com/MVP/card_table.png"
-              }
-            ></img>
-            <div className="board">
-              <Board id={this.state.id} />
             </div>
           </div>
         </div>
