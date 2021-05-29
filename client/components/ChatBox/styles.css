@@ -4,11 +4,11 @@
   margin: auto;
   margin-right: 605px;
   width: 30%;
-  height: 200px;
-  border: solid 10px rgb(6, 53, 4);
+  height: 150px;
+  border: solid 10px rgb(5, 44, 4);
   background-color: rgb(253, 194, 1);
   border-radius: 15px;
-  margin-top: -175px;
+  margin-top: -125px;
 }
 
 #messages {
@@ -23,9 +23,8 @@
 #input {
   box-sizing: border-box;
   width: 400px;
-  height: 30px;
+  height: 80px;
   padding: 7px;
-  /* margin-bottom: 320px; */
 }
 
 #drop {
