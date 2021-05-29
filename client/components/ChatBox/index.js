@@ -23,7 +23,6 @@ class ChatBox extends Component {
       .get("/messages")
       .then((data) => {
         var messagesObj = data.data;
-        console.log(data.data);
         let messagesArr = [];
         for (const key in messagesObj) {
           messagesArr.push(

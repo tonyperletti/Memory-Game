@@ -2,18 +2,21 @@
   box-sizing: border-box;
   display: grid;
   margin: auto;
-  margin-right: 605px;
+  margin-right: 599px;
   width: 30%;
-  height: 150px;
+  height: 100px;
   border: solid 10px rgb(5, 44, 4);
-  background-color: rgb(253, 194, 1);
+  /* background-color: rgb(253, 194, 1); */
+  background-color: rgb(240, 133, 34);
   border-radius: 15px;
-  margin-top: -125px;
+  margin-top: -100px;
 }
 
 #messages {
   margin: auto;
   font-size: 30px;
+  font-family: monospace;
+  color: rgb(105, 44, 2);
 }
 
 #form {
@@ -23,8 +26,9 @@
 #input {
   box-sizing: border-box;
   width: 400px;
-  height: 80px;
+  height: 30px;
   padding: 7px;
+  border-radius: 25px;
 }
 
 #drop {

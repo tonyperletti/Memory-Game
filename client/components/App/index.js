@@ -63,9 +63,7 @@ class App extends React.Component {
     axios
       .get("/players/")
       .then((data) => {
-        // console.log(data);
         var players = data.data;
-        console.log(players);
         this.setState({
           players: players,
           currentPlayer: players[0].userName,
@@ -92,10 +90,13 @@ class App extends React.Component {
             </div>
             <div className="players-container">
               <div className="player">
+                <div className="word-bubble"></div>
                 <img id="player1" src={this.state.currentPic}></img>
                 <p className="player-name">{this.state.currentPlayer}</p>
               </div>
+
               <div className="player">
+                <div className="word-bubble"></div>
                 <img id="player2" src={this.state.currentPic}></img>
                 <p className="player-name">{this.state.currentPlayer}</p>
               </div>
