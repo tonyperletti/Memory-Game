@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "emmet.showExpandedAbbreviation": "never",
+    "javascript.validate.enable": false
+  }
+}
