@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-// STYLED COMPONENTS
+// STYLED COMPONENTS ////////////////////////////
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +28,8 @@ const Picture = styled.img`
   width: 50%;
   height: 15px%;
 `;
+
+//// PLAYER COMPONENT /////////////////////////
 
 export default class Player extends Component {
   constructor(props) {

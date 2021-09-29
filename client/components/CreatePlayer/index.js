@@ -50,20 +50,20 @@ class CreatePlayer extends React.Component {
       .catch((error) => console.log(error));
   }
 
-  // componentDidMount() {
-  //   axios
-  //     .get("/players/")
-  //     .then((data) => {
-  //       var players = data.data;
-  //       console.log(players);
-  //       this.setState({
-  //         players: players,
-  //         currentPlayer: data.data[0].userName,
-  //         currentPic: data.data[0].imageUrl,
-  //       });
-  //     })
-  //     .catch((error) => console.log(error));
-  // }
+  componentDidMount() {
+    axios
+      .get("/players/")
+      .then((data) => {
+        var players = data.data;
+        console.log(players);
+        this.setState({
+          players: players,
+          currentPlayer: data.data[0].userName,
+          currentPic: data.data[0].imageUrl,
+        });
+      })
+      .catch((error) => console.log(error));
+  }
   render() {
     return (
       <div className="user-form">

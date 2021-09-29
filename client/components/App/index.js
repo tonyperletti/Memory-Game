@@ -13,7 +13,7 @@ class App extends React.Component {
       players: ["tom", "bob"], // ["tom", "bob"],
       name: "",
       image: "",
-      currentPlayer: "me", //////// HARD CODED FIX THIS!!!!!
+      currentPlayer: "", //////// HARD CODED FIX THIS!!!!!
       currentPic: "",
       id: 1,
     };
@@ -26,6 +26,7 @@ class App extends React.Component {
   initiateTimeStop() {}
 
   increaseId() {
+    y;
     var count = this.state.id;
     this.setState({
       id: count++,
@@ -63,6 +64,7 @@ class App extends React.Component {
     axios
       .get("/players/")
       .then((data) => {
+        console.log(data.data);
         var players = data.data;
         this.setState({
           players: players,
